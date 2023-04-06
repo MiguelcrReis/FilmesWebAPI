@@ -1,0 +1,14 @@
+API -> Application Programming Interface.
+
+Clientes enviam requisições para a API, ao invés de enviar para o servidor/banco de dados diretamente.
+
+REST -> Padrão arquitetural que visa padronizar os meios de tráfego de dados.
+
+RESTful -> API que implementa o conceito da arquitetura REST.  
+
+API resumidamente -> Uma API visa disponibilizar informações para outras aplicações. Para consumir os seus recursos é necessário seguir um conjunto de regras estabelecidas. Abstrai detalhes de implementação. Controla o que pode/deve ser acessado. Facilitar o consumo e disponibilização de dados e padronização.
+
+Controllers são a porta de entrada da nossa API.
+
+
+
