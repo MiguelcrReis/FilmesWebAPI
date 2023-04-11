@@ -19,9 +19,9 @@ public class FilmeController : ControllerBase
     }
 
     [HttpGet]
-    public IEnumerable<Filme> ConsultarFilmes()
+    public IEnumerable<Filme> ConsultaFilmes([FromQuery] int skip = 0, [FromQuery] int take = 50)
     {
-        return filmes;
+        return filmes.Skip(skip).Take(take);
     }
 
     [HttpGet("{id}")]
