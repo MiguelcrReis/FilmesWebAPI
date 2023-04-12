@@ -13,4 +13,7 @@ Controllers são a porta de entrada da nossa API.
 Vantagem de utilizar DbContext para acessar o banco de dados -> abstrair a lógica de acesso ao banco de dados (menos esforço para acessar o db).
 
 
+obs: sempre que adicionar algum dado ao banco, é necessário salvar a alteração/inserção, exemplo:}
+_context.Filmes.Add(filme);
+_context.SaveChanges();
 
