@@ -50,3 +50,14 @@ Onde "op" é a operação a ser feita, no caso um replace.
 "path", é caminho do dado que irá ser feito o replace, no caso o titulo do Filme.
 E "value" é o valor a ser inserido no lugar no dado que já está no campo titulo.
 
+
+### Resumo do Capitulo 5
+
+O verbo PUT pode ser utilizado quando queremos atualizar algum recurso no sistema.
+O verbo PATCH também pode ser utilizado para atualizações, porém de maneira parcial.
+Apesar do verbo PATCH não exigir a passagem completa do objeto a ser atualizado, exige uma configuração mais complexa.
+O verbo DELETE deve ser utilizado quando queremos deletar um recurso no sistema.
+Quando um recurso é atualizado ou removido com sucesso, devemos retornar status 204 (No Content).
+
+
+
