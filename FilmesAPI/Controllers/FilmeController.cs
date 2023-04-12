@@ -11,6 +11,7 @@ namespace FilmesAPI.Controllers;
 [Route("[controller]")]
 public class FilmeController : ControllerBase
 {
+    #region Injeção de Depêndencia
     private readonly FilmeContext _context;
     private readonly IMapper _mapper;
     public FilmeController(FilmeContext context, IMapper mapper)
@@ -18,7 +19,9 @@ public class FilmeController : ControllerBase
         _context = context;
         _mapper = mapper;
     }
+    #endregion
 
+    #region Adiciona Filme
     [HttpPost]
     public IActionResult AdicionaFilme([FromBody] CreateFilmeDto filmeDto)
     {
@@ -28,13 +31,17 @@ public class FilmeController : ControllerBase
         _context.SaveChanges();
         return CreatedAtAction(nameof(ConsultaFilmePorId), new { id = filme.Id }, filme);
     }
+    #endregion
 
+    #region Consulta Filmes
     [HttpGet]
     public IEnumerable<ReadFilmeDto> ConsultaFilmes([FromQuery] int skip = 0, [FromQuery] int take = 50)
     {
         return _mapper.Map<List<ReadFilmeDto>>(_context.Filmes.Skip(skip).Take(take));
     }
+    #endregion
 
+    #region Consulta Filme Por Id
     [HttpGet("{id}")]
     public IActionResult ConsultaFilmePorId(int id)
     {
@@ -45,7 +52,9 @@ public class FilmeController : ControllerBase
 
         return Ok(filmeDto);
     }
+    #endregion
 
+    #region Atualiza Filme
     [HttpPut("{id}")]
     public IActionResult AtualizaFilme(int id, [FromBody] UpdateFilmeDto filmeDto)
     {
@@ -58,7 +67,9 @@ public class FilmeController : ControllerBase
 
         return NoContent();
     }
+    #endregion
 
+    #region Atualiza Filme Parcial
     [HttpPatch("{id}")]
     public IActionResult AtualizaFilmeParcial(int id, JsonPatchDocument<UpdateFilmeDto> patch)
     {
@@ -77,7 +88,9 @@ public class FilmeController : ControllerBase
 
         return NoContent();
     }
+    #endregion
 
+    #region Deleta Filme
     [HttpDelete("{id}")]
     public IActionResult DeletaFilme(int id)
     {
@@ -90,4 +103,5 @@ public class FilmeController : ControllerBase
 
         return NoContent();
     }
+    #endregion
 }
