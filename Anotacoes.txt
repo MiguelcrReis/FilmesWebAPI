@@ -13,7 +13,22 @@ Controllers são a porta de entrada da nossa API.
 Vantagem de utilizar DbContext para acessar o banco de dados -> abstrair a lógica de acesso ao banco de dados (menos esforço para acessar o db).
 
 
-obs: sempre que adicionar algum dado ao banco, é necessário salvar a alteração/inserção, exemplo:}
+obs: sempre que adicionar algum dado ao banco, é necessário salvar a alteração/inserção, exemplo:
 _context.Filmes.Add(filme);
 _context.SaveChanges();
 
+
+DTOs trazem diversas vantagens relacionadas a organização de código. Além disso, utilizando DTOs, conseguimos ter um maior controle em nossas requisições e respostas. 
+Com DTOs podemos definir os parâmetros enviados de maneira isolada do nosso modelo do banco de dados.
+Há parâmetros que não precisamos enviar, como por exemplo o id. Outro fator é que não estamos mais o nosso modelo do banco de dados.
+
+
+### Resumo Capitulo 4: 
+
+O DbContext serve como ponte e para fazer operações no banco. 
+DTOs nos ajudam a não deixar nosso modelo de banco de dados exposto.
+
+
+______________________________
+
+Retorno de atualização utilizando verbo PUT -> 204 (No Content)
