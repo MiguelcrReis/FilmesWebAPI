@@ -32,3 +32,21 @@ DTOs nos ajudam a não deixar nosso modelo de banco de dados exposto.
 ______________________________
 
 Retorno de atualização utilizando verbo PUT -> 204 (No Content)
+
+
+O PATCH é uma outra alternativa de verbo HTTP usado para atualizar recursos em nossa base. Não é necessário enviar o objeto completo. Apenas os campos que serão atualizados, exemplo:
+
+[
+    {
+        "op": "replace",
+        "path": "/titulo",
+        "value": "As aventuras de Miguel Reis"
+    }
+]
+
+Como o exemplo a cima mostra, para utilizar o verbo PATCH é necessário fazer uma requisição mais complexa, porém, permite a atualização parcial de dados.
+
+Onde "op" é a operação a ser feita, no caso um replace.
+"path", é caminho do dado que irá ser feito o replace, no caso o titulo do Filme.
+E "value" é o valor a ser inserido no lugar no dado que já está no campo titulo.
+
